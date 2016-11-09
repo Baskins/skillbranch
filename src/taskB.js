@@ -12,7 +12,7 @@ function summary(req, res) {
   let fullnameSplit = fullname.split(' ').reverse();
 
 
-  if (fullnameSplit.length > 3 || fullname === '') {
+  if (fullnameSplit.length > 3 || fullname === '' || !fullname.exec('[a-zA-ZА-Яа-я]')) {
 
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
