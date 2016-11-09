@@ -16,14 +16,14 @@ function summary(req, res) {
 
     res.setHeader('Access-Control-Allow-Origin', 'http://account.skill-branch.ru');
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`Invalid fullname`);
+      res.end(`<body><p>Invalid fullname</p></body>`);
 
   } else if (fullnameSplit.length === 1) {
 
       let lastName = fullnameSplit[0];
       res.setHeader('Access-Control-Allow-Origin', 'http://account.skill-branch.ru');
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`${lastName}`);
+      res.end(`<body><p>${lastName}</p></body>`);
 
   } else if (fullnameSplit.length === 2) {
 
@@ -33,7 +33,7 @@ function summary(req, res) {
 
       res.setHeader('Access-Control-Allow-Origin', 'http://account.skill-branch.ru');
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`${lastName} ${name1Symbol}.`);
+      res.end(`<body><p>${lastName} ${name1Symbol}.</p></body>`);
 
   } else {
 
@@ -47,7 +47,7 @@ function summary(req, res) {
 
       res.setHeader('Access-Control-Allow-Origin', 'http://account.skill-branch.ru');
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`${lastName} ${name1Symbol}. ${middleName1Symbol}.`);
+      res.end(`<body><p>${lastName} ${name1Symbol}. ${middleName1Symbol}.</p></body>`);
 
   }
 
