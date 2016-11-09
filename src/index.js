@@ -23,11 +23,15 @@ function summary(req, res) {
         b = 0;
       }
     let sum = a+b;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.writeHead(200, {'Content-type' : 'text/html'});
-    res.end(`<p>Query: ${URIpath}</p><p>${sum}</p>`)
+    res.end(`${sum}`)
   } else {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.writeHead(200, {'Content-type' : 'text/html'});
-    res.end(`<p>Query: ${URIpath}</p><p>0</p>`)
+    res.end(`0`)
   }
 }
 http.createServer(summary).listen(3000, () => {

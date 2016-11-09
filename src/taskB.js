@@ -11,8 +11,10 @@ function summary(req, res) {
 
   let fullnameSplit = fullname.split(' ').reverse();
 
+  console.log(fullname);
+  console.log(fullname.exec('/[a-zA-ZА-Яа-я]/'));
 
-  if (fullnameSplit.length > 3 || fullname === '' || !fullname.exec('[a-zA-ZА-Яа-я]')) {
+  if (fullnameSplit.length > 3 || fullname === '' || fullname.search('[^A-zА-яЁё]') !== 0) {
 
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
