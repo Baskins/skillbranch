@@ -17,7 +17,7 @@ function summary(req, res) {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`<html><body><p>Invalid fullname</p></body></html>`);
+      res.end(`Invalid fullname`);
 
   } else if (fullnameSplit.length === 1) {
 
@@ -25,7 +25,7 @@ function summary(req, res) {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`<html><body><p>${lastName}</p></body></html>`);
+      res.end(`${lastName}`);
 
   } else if (fullnameSplit.length === 2) {
 
@@ -36,7 +36,7 @@ function summary(req, res) {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`<html><body><p>${lastName} ${name1Symbol}.</p></body></html>`);
+      res.end(`${lastName} ${name1Symbol}.`);
 
   } else {
 
@@ -51,7 +51,7 @@ function summary(req, res) {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.writeHead(200, {'Content-type' : 'text/html'});
-      res.end(`<html><body><p>${lastName} ${name1Symbol}. ${middleName1Symbol}.</p></body></html>`);
+      res.end(`${lastName} ${name1Symbol}. ${middleName1Symbol}.`);
 
   }
 
